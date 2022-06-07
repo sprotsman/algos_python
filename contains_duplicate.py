@@ -1,3 +1,5 @@
+# Leetcode 271. Contains Duplicate
+
 from typing import List
 
 print("solution 1")
@@ -75,3 +77,21 @@ def contains_duplicates(values):
 
 print(contains_duplicates([5, 2, 4, 1, 4, 5]))  # -> True
 print(contains_duplicates([7, 3, 2, 8, 9]))     # -> False
+
+print("\nsolution 7")
+
+
+class Solution7:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        hashset = set()
+
+        for n in nums:
+            if n in hashset:
+                return True
+            hashset.add(n)
+        return False
+
+
+s7 = Solution7()
+print(s7.containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
+print(s7.containsDuplicate([1, 2, 3, 4]))
